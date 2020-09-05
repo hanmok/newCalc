@@ -1,0 +1,28 @@
+
+"A numberLength Limit"   = "최대 15 자릿수까지 입력이 가능합니다.";
+"A answerLength Limit"   = "결과값은 15 자릿수 이내여야 합니다.";
+"A floatingLength Limit" = "소숫점 아래 10 자리까지 입력이 가능합니다.";
+
+"Sound On" = "소리 켜짐";
+"Sound Off" = "소리 꺼짐";
+"Noti On" = "자동수정 알림 켜짐";
+"Noti Off" = "자동수정 알림 꺼짐";
+
+"Modification" = "수정되었습니다.";
+
+"darkMode" = "다크 모드";
+"lightMode" = "라이트 모드";
+
+"removeAlertMessage" = "모든 데이터를 지우시겠어요?";
+
+"copy" = "복사";
+"share" = "공유";
+"delete" = "삭제";
+
+"copy complete" = "복사되었습니다.";
+"delete complete" = "제거되었습니다. ";
+"delete all complete" = "모든 기록이 제거되었습니다.";
+
+"saved to history" = "저장되었습니다.";
+
+

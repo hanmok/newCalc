@@ -1,0 +1,58 @@
+
+"A numberLength Limit"   = "You cannot enter more than 15 digits.";
+"A answerLength Limit"   = "Result value should be \n less than or equal to 15 digits.";
+"A floatingLength Limit" = "You cannot enter more than \n 10 digits after decimal point.";
+"Sound On" = "Sound On";
+"Sound Off" = "Sound Off";
+
+"darkMode" = "Dark Mode";
+"lightMode" = "Light Mode";
+
+"Noti On" = "Automodification Alert On";
+"Noti Off" = "Automodification Alert Off";
+
+"Modification" = "Modified";
+
+"copy complete" = "Copied";
+"delete complete" = "Deleted";
+"delete all complete" = "All Records Deleted";
+
+"saved to history" = "Saved ";
+
+
+
+
+
+"removeAlertMessage" = "Are you sure you want to remove all the records?";
+
+"copy" = "Copy";
+"share" = "Share";
+"delete" = "Delete";
+
+////
+//
+//"A numberLength Limit" = "최대 15 자릿수까지 입력이 가능합니다.";
+//"A answerLength Limit" = "결과값은 15 자릿수 이내여야 합니다. ";
+//
+//"Sound On" = "소리 꺼짐";
+//"Sound Off" = "소리 켜짐";
+//"Noti On" = "자동수정 알림 켜짐";
+//"Noti Off" = "자동수정 알림 꺼짐";
+//
+//"Modification" = "수정되었습니다.";
+//
+//"darkMode" = "다크모드";
+//"lightMode" = "라이트 모드";
+//
+//"removeAlertMessage" = "모든 데이터를 지우시겠어요?";
+//
+//"copy" = "복사";
+//"share" = "공유";
+//"delete" = "삭제";
+//
+//"copy complete" = "복사되었습니다.";
+//"delete complete" = "제거되었습니다. ";
+//"delete all complete" = "모든 기록이 제거되었습니다.";
+//
+//"saved to history" = "저장되었습니다.";
+//
