@@ -2243,22 +2243,6 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                                 }else{break small2}
                             }
                             
-//                            numOfEnter[eProcess] += 1
-//                            if lastMoveOP[eProcess].count <= numOfEnter[eProcess]{
-//                                lastMoveOP[eProcess].append(0)
-//                            }
-//
-//                            if lastMoveOP[eProcess][numOfEnter[eProcess]-1] == lastOperatorPosition + 1{
-//                                lastMoveOP[eProcess].removeLast()
-//                                numOfEnter[eProcess] -= 1
-//                                break startFor
-//                            }
-//
-//                            str[lastOperatorPosition] = "\n" + str[lastOperatorPosition]
-//
-//                            lastMoveOP[eProcess][numOfEnter[eProcess]] = lastOperatorPosition + 1
-//                            sumForEachProcess = 0
-                            
                             
                             numOfEnter[eProcess] += 1
                             
@@ -2316,14 +2300,8 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                             break small1
                         }
                     }
-//                    small2 : for _ in 0 ... 5{
-//                        if lastOperatorPosition > 0{
-//                            if pOfNumsAndOpers[lastOperatorPosition-1] == "oper"{
-//                                lastOperatorPosition -= 2
-//                                if lastOperatorPosition < 2 {break small2}
-//                            }else{break small2}
-//                        }
-//                    } // 이거같은데 ? 얘 뭐하는 건지 모르겠음.
+                    
+                    
                     
                     numOfEnter[eProcess] += 1
                     if lastMoveOP[eProcess].count <= numOfEnter[eProcess]{
@@ -2331,9 +2309,15 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     }
                     
                     if lastMoveOP[eProcess][numOfEnter[eProcess]-1] == lastOperatorPosition + 1{
-                        lastMoveOP[eProcess].removeLast()
-                        numOfEnter[eProcess] -= 1
-                        break startFor
+//                        lastMoveOP[eProcess].removeLast()
+//                        numOfEnter[eProcess] -= 1
+                        if lastOperatorPosition + 2 < setteroi{
+                            lastMoveOP[eProcess][numOfEnter[eProcess]] = lastOperatorPosition + 2
+                        }else{
+                            break startFor
+                        }
+//                        break startFor
+                        continue startFor
                     }
                     
                     str[lastOperatorPosition] = "\n" + str[lastOperatorPosition]
