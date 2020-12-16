@@ -7,16 +7,19 @@
 //
 //
 import UIKit
-
+//let localizedStrings = LocalizedStringStorage()
+let localizedStrings = LocalizedStringStorage()
 extension UIViewController{
     func showAlert(title : String, message : String, handlerA : ((UIAlertAction) -> Void)?, handlerB : ((UIAlertAction) -> Void)?){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let actionA = UIAlertAction(title: "Yes", style: .cancel, handler: handlerA)
+//        let actionA = UIAlertAction(title: "Cancel", style: .cancel, handler: handlerA)
+//        let actionA = UIAlertAction(title: self.localizedStrings.cancel, style: .cancel, handler: handlerA)
+        let actionA = UIAlertAction(title: localizedStrings.cancel, style: .cancel, handler: handlerA)
         
-        let actionB = UIAlertAction(title: "No", style: .destructive, handler: handlerB)
-       
+//        let actionB = UIAlertAction(title: "Delete", style: .destructive, handler: handlerB)
+        let actionB = UIAlertAction(title: localizedStrings.delete, style: .destructive, handler: handlerB)
         
  alert.addAction(actionB)
         alert.addAction(actionA) // order independent.

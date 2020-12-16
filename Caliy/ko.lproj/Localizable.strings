@@ -18,6 +18,7 @@
 "copy" = "복사";
 "share" = "공유";
 "delete" = "삭제";
+"cancel" = "취소";
 
 "copy complete" = "복사되었습니다.";
 "delete complete" = "제거되었습니다. ";

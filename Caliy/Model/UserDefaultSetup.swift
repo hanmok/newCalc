@@ -18,6 +18,8 @@ struct UserDefaultSetup{
         case isUserEverChangedKey
         case userDeviceSizeInfoKey
         case numberReviewClickedKey
+        case userDeviceVersionInfoKey
+        case userDeviceVersionTypeInfoKey
     }
     
     
@@ -44,6 +46,13 @@ struct UserDefaultSetup{
         defaults.set(userDeviceSizeInfo, forKey: UserDefaultKey.userDeviceSizeInfoKey.rawValue)
     }
     
+    func setUserDeviceVersionInfo(userDeviceVersionInfo : String){
+        defaults.set(userDeviceVersionInfo, forKey: UserDefaultKey.userDeviceVersionInfoKey.rawValue)
+    }
+    func setUserDeviceVersionTypeInfo(userDeviceVersionTypeInfo : String){
+        defaults.set(userDeviceVersionTypeInfo, forKey: UserDefaultKey.userDeviceVersionTypeInfoKey.rawValue)
+    }
+    
     
     
     func getIsSoundOn() -> Bool{
@@ -65,7 +74,15 @@ struct UserDefaultSetup{
     func getUserDeviceSizeInfo() -> String{
         return defaults.string(forKey: UserDefaultKey.userDeviceSizeInfoKey.rawValue) ?? "A"
     }
+    func getUserDeviceVersionInfo() -> String{
+        return defaults.string(forKey: UserDefaultKey.userDeviceVersionInfoKey.rawValue) ?? "ND"
+    }
+    func getUserDeviceVersionTypeInfo() -> String{
+        return defaults.string(forKey: UserDefaultKey.userDeviceVersionTypeInfoKey.rawValue) ?? "What"
+    }
     
+    //ND stands for Not Determined.
+    // MP : Most popular, P : Popular, LP : Least Popular
     
     
     func setIsUserEverChanged(isUserEverChanged : Bool){

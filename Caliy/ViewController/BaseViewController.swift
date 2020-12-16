@@ -13,7 +13,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+//    self.localizedStrings.soundOff,
     //MARK: - Basic setup
     let childTableVC = HistoryRecordVC()
     let newTableVC = HistoryRecordVC()
@@ -81,6 +81,8 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     
     
     override func viewDidLoad() {
+        
+        
         
         let screenRect = UIScreen.main.bounds
         let screenWidth = screenRect.size.width
@@ -2218,34 +2220,77 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         
     }
     
+//    func lineSetter(){
+//        //        print("linesetter triggered!")
+//        var sumForEachProcess = 0.0
+//
+//        let eProcess = 0
+//        if setteroi >= 0{
+//
+//            if lastMoveOP[eProcess][numOfEnter[eProcess]] < setteroi{
+//                //잠시 막아둠(윗줄)
+//                oiLoop : for eODigit in lastMoveOP[eProcess][numOfEnter[eProcess]] ... setteroi{
+//
+//                    sumForEachProcess += sumOfUnitSizes[eODigit]// oi index
+//
+//                    if sumForEachProcess > 0.95 - 0.1{
+//                        let indexForpOfNumsAndOpers = pOfNumsAndOpers.lastIndex(of: "oper")! // 우선 이게 없을 수도 있는 수..
+//                        let lastOperator = (dictionaryForLine[indexForpOfNumsAndOpers]!)
+//                        var lastPositionToSave = process.lastIndexInt(of: Character(lastOperator))!
+//
+//                        small2 : for _ in 0 ... 5{
+//                            if String(process[lastPositionToSave - 1]) == "(" {
+//                                lastPositionToSave -= 2
+//                                if lastPositionToSave < 2 {break small2}
+//                            }else{break small2}
+//                        }
+//
+//                        process.insert("\n", at: process.index(process.startIndex, offsetBy: lastPositionToSave, limitedBy: process.endIndex)!)
+//
+//                        numOfEnter[eProcess] += 1
+//
+//                        if lastMoveOP[eProcess].count <= numOfEnter[eProcess]{
+//                            lastMoveOP[eProcess].append(0)
+//                        }
+//
+//                        lastMoveOP[eProcess][numOfEnter[eProcess]] =  indexForpOfNumsAndOpers + 1  //eODigit + 1
+//
+//                        sumForEachProcess = 0
+//                        break oiLoop
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
     func lineSetter(){
         var sumForEachProcess = 0.0
-        
+
         let eProcess = 0
         if setteroi >= 0{
-            
+
             if lastMoveOP[eProcess][numOfEnter[eProcess]] < setteroi{
                 //잠시 막아둠(윗줄)
                 oiLoop : for eODigit in lastMoveOP[eProcess][numOfEnter[eProcess]] ... setteroi{
-                    
+
                     sumForEachProcess += sumOfUnitSizes[eODigit]// oi index
-                    
+
                     if sumForEachProcess > 0.95 - 0.1{
                         if let indexForpOfNumsAndOpers = pOfNumsAndOpers.lastIndex(of: "oper"){ // index of last operator
-                            
+print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                             let lastOperator = (dictionaryForLine[indexForpOfNumsAndOpers]!) // what is operator ?
                             var lastPositionToSave = process.lastIndexInt(of: Character(lastOperator))! //process의 index of that operator.
-                            
+
                             small2 : for _ in 0 ... 5{
                                 if String(process[lastPositionToSave - 1]) == "(" {
                                     lastPositionToSave -= 2
                                     if lastPositionToSave < 2 {break small2}
                                 }else{break small2}
                             }
-                            
-                            
+
+
                             numOfEnter[eProcess] += 1
-                            
+
                             if lastMoveOP[eProcess].count <= numOfEnter[eProcess]{
                                 lastMoveOP[eProcess].append(0)
                             }
@@ -2253,18 +2298,19 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                             if lastMoveOP[eProcess][numOfEnter[eProcess]-1] == indexForpOfNumsAndOpers + 1{
                                 lastMoveOP[eProcess].removeLast()
                                 numOfEnter[eProcess] -= 1
+//                                if indexForpOfNumsAndOpers + 2 <
+
                                 break oiLoop
                             }
-                            
+
                             process.insert("\n", at: process.index(process.startIndex, offsetBy: lastPositionToSave, limitedBy: process.endIndex)!) // 그 위치에 \n 삽입.
-                            
-                            
+
                             lastMoveOP[eProcess][numOfEnter[eProcess]] = indexForpOfNumsAndOpers + 1
-                            
+
                             sumForEachProcess = 0
-                            
+
                             break oiLoop
-                        }
+                        }else{print("indexForpOfNumsAndOpers : nil")}
                     } // if sumForEachProcess > 0.95 - 0.1{
                 } // oiLoop : for eODigit in lastMoveOP[eProcess][numOfEnter[eProcess]] ... setteroi{
             } // if lastMoveOP[eProcess][numOfEnter[eProcess]] <= setteroi{
@@ -2284,9 +2330,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         var lastOperatorPosition = 0
         //prevent error when floating points are too long
         startFor : while(lastMoveOP[eProcess][numOfEnter[eProcess]] < setteroi){
-            print("line2278, lineSettingOtherProcess")
-            print("lastMoveOP : \(lastMoveOP), setteroi : \(setteroi)")
-            print("lastOperatorPosition : \(lastOperatorPosition)")
+            
             sumForEachProcess = 0
             
             for eachOi in lastMoveOP[eProcess][numOfEnter[eProcess]] ... setteroi{
@@ -2341,7 +2385,6 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 processToBeReturn += str[eachOne] // str[setteroi] 까지만 작업함. 고로.. 뒤에껀 ㄱㅊ.
             }
         }
-        
         return processToBeReturn
     }
     
@@ -2824,6 +2867,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     var sub8 = UIImageView(image: #imageLiteral(resourceName: "transparent"))
     var sub9 = UIImageView(image: #imageLiteral(resourceName: "transparent"))
     var subDot = UIImageView(image: #imageLiteral(resourceName: "transparent"))
+    let subsubDot = UIImageView(image: #imageLiteral(resourceName: "transparent"))
     var subPlus = UIImageView(image: #imageLiteral(resourceName: "transparent"))
     var subMinus = UIImageView(image: #imageLiteral(resourceName: "transparent"))
     var subMulti = UIImageView(image: #imageLiteral(resourceName: "transparent"))
@@ -3604,10 +3648,19 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
             sub00.widthAnchor.constraint(equalTo: num00.heightAnchor, multiplier: CGFloat(modifiedWidth[10])).isActive = true
             sub00.heightAnchor.constraint(equalTo: num00.heightAnchor, multiplier: CGFloat(heights[10])).isActive = true
             
+            numberDot.addSubview(subsubDot)
+            subsubDot.translatesAutoresizingMaskIntoConstraints = false
+            subsubDot.bottomAnchor.constraint(equalTo: numberDot.bottomAnchor).isActive = true
+            subsubDot.leftAnchor.constraint(equalTo: numberDot.leftAnchor).isActive = true
+            subsubDot.rightAnchor.constraint(equalTo: numberDot.rightAnchor).isActive = true
+            subsubDot.heightAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: 0.385).isActive = true
+            
+            
             numberDot.addSubview(subDot)
             subDot.translatesAutoresizingMaskIntoConstraints = false
             subDot.centerXAnchor.constraint(equalTo: numberDot.centerXAnchor).isActive = true
-            subDot.centerYAnchor.constraint(equalTo: numberDot.centerYAnchor).isActive = true
+//            subDot.centerYAnchor.constraint(equalTo: numberDot.centerYAnchor).isActive = true
+            subDot.bottomAnchor.constraint(equalTo: subsubDot.topAnchor).isActive = true
             subDot.widthAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: CGFloat(modifiedWidth[11])).isActive = true
             subDot.heightAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: CGFloat(heights[11])).isActive = true
             
@@ -3686,6 +3739,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
             
             if isSoundOn{
                 subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "etcSoundsOnLight"))// light and Sound On
+//                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOn"))// light and Sound On
                 extra1.addSubview(subEx1Sound)
                 subEx1Sound.translatesAutoresizingMaskIntoConstraints = false
                 subEx1Sound.centerXAnchor.constraint(equalTo: extra1.centerXAnchor).isActive = true
@@ -3694,6 +3748,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 subEx1Sound.heightAnchor.constraint(equalTo: extra1.heightAnchor, multiplier: CGFloat(0.288*1.3)).isActive = true
             }else{
                 subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "etcSoundsOffLight"))// light and Sound Off
+//                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOff"))// light and Sound Off
                 extra1.addSubview(subEx1Sound)
                 subEx1Sound.translatesAutoresizingMaskIntoConstraints = false
                 subEx1Sound.centerXAnchor.constraint(equalTo: extra1.centerXAnchor).isActive = true
@@ -3868,10 +3923,18 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
             sub00.widthAnchor.constraint(equalTo: num00.heightAnchor, multiplier: CGFloat(modifiedWidth[10])).isActive = true
             sub00.heightAnchor.constraint(equalTo: num00.heightAnchor, multiplier: CGFloat(heights[10])).isActive = true
             
+            numberDot.addSubview(subsubDot)
+            subsubDot.translatesAutoresizingMaskIntoConstraints = false
+            subsubDot.bottomAnchor.constraint(equalTo: numberDot.bottomAnchor).isActive = true
+            subsubDot.leftAnchor.constraint(equalTo: numberDot.leftAnchor).isActive = true
+            subsubDot.rightAnchor.constraint(equalTo: numberDot.rightAnchor).isActive = true
+            subsubDot.heightAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: 0.385).isActive = true
+            
             numberDot.addSubview(subDot)
             subDot.translatesAutoresizingMaskIntoConstraints = false
             subDot.centerXAnchor.constraint(equalTo: numberDot.centerXAnchor).isActive = true
-            subDot.centerYAnchor.constraint(equalTo: numberDot.centerYAnchor).isActive = true
+//            subDot.centerYAnchor.constraint(equalTo: numberDot.centerYAnchor).isActive = true
+            subDot.bottomAnchor.constraint(equalTo: subsubDot.topAnchor).isActive = true
             subDot.widthAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: CGFloat(modifiedWidth[11])).isActive = true
             subDot.heightAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: CGFloat(heights[11])).isActive = true
             
@@ -3951,6 +4014,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
             
             if isSoundOn{
                 subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "etcSoundsOnDark"))// dark and Sound On
+//                                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOn"))// dark and Sound On
                 extra1.addSubview(subEx1Sound)
                 subEx1Sound.translatesAutoresizingMaskIntoConstraints = false
                 subEx1Sound.centerXAnchor.constraint(equalTo: extra1.centerXAnchor).isActive = true
@@ -3959,6 +4023,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 subEx1Sound.heightAnchor.constraint(equalTo: extra1.heightAnchor, multiplier: CGFloat(0.288*1.3)).isActive = true
             }else{
                 subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "etcSoundsOffDark"))// dark and Sound Off
+//                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOff"))// dark and Sound Off
                 extra1.addSubview(subEx1Sound)
                 subEx1Sound.translatesAutoresizingMaskIntoConstraints = false
                 subEx1Sound.centerXAnchor.constraint(equalTo: extra1.centerXAnchor).isActive = true

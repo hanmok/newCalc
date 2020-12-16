@@ -200,6 +200,7 @@ class HistoryRecordCell: UITableViewCell { // change it to : SwipeTableViewCell
             backgroundColor = colorList.bgColorForEmptyAndNumbersDM
             layer.borderColor = CGColor(srgbRed: 0.7, green: 0.7, blue: 0.7, alpha: 0.5)
         }
+        
         layer.borderWidth = 0.23
     }
 }

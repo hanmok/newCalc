@@ -26,7 +26,7 @@ struct LocalizedStringStorage{
     let copyComplete = NSLocalizedString("copy complete", comment: "복사 완료")
     let share = NSLocalizedString("share", comment: "공유")
     let delete = NSLocalizedString("delete", comment: "삭제")
-    
+    let cancel = NSLocalizedString("cancel", comment: "취소")
     
     let deleteComplete = NSLocalizedString("delete complete", comment: "제거 완료")
     let deleteAllComplete = NSLocalizedString("delete all complete", comment: "모든 기록 제거완료.")

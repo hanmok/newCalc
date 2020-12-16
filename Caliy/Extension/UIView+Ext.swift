@@ -27,10 +27,17 @@ extension UIView{
         trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
     }
     
-    func pinWithSpace2(to superView : UIView){
+    func pinWithSpace2(to superView : UIView, type : String){
+        var sizeForType : CGFloat?
+        switch type {
+//        case "MP" : sizeForType = 70
+        case "MP" : sizeForType = 80
+        case "LP" : sizeForType = 50
+        default   : sizeForType = 60
+        }
             translatesAutoresizingMaskIntoConstraints = false
     //        topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
-            topAnchor.constraint(equalTo: superView.topAnchor, constant: 60).isActive = true
+        topAnchor.constraint(equalTo: superView.topAnchor, constant: sizeForType!).isActive = true
     //        bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true
             bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true
             leadingAnchor.constraint(equalTo: superView.leadingAnchor).isActive = true
