@@ -288,24 +288,18 @@ class HistoryRecordVC: UIViewController {
             trashButton.addSubview(trashbinImage)
             trashButton.addSubview(trashbinHelper)
             trashbinHelper.translatesAutoresizingMaskIntoConstraints = false
-            trashbinImage.translatesAutoresizingMaskIntoConstraints = false
             trashbinHelper.topAnchor.constraint(equalTo: trashButton.topAnchor).isActive = true
-            trashbinImage.topAnchor.constraint(equalTo: trashButton.topAnchor).isActive = true
-//            trashbinImage.pin(to: trashButton)
-            
-            trashbinImage.bottomAnchor.constraint(equalTo: trashButton.bottomAnchor).isActive = true
             trashbinHelper.bottomAnchor.constraint(equalTo: trashButton.bottomAnchor).isActive = true
-            
             trashbinHelper.leftAnchor.constraint(equalTo: trashButton.leftAnchor).isActive = true
-            trashbinHelper.widthAnchor.constraint(equalTo: trashButton.widthAnchor, multiplier: 0.15).isActive = true
-            
+            trashbinHelper.widthAnchor.constraint(equalTo: trashButton.widthAnchor, multiplier: 0.1).isActive = true
+
+            trashbinImage.translatesAutoresizingMaskIntoConstraints = false
+            trashbinImage.heightAnchor.constraint(equalTo: trashButton.heightAnchor, multiplier: 0.9).isActive = true
+            trashbinImage.bottomAnchor.constraint(equalTo: trashButton.bottomAnchor).isActive = true
             trashbinImage.leftAnchor.constraint(equalTo: trashbinHelper.rightAnchor).isActive =  true
-        
             trashbinImage.widthAnchor.constraint(equalTo: trashButton.widthAnchor, multiplier: 0.55).isActive = true
 
-            
-            
-            
+    
             if isLightModeOn{
                 infoView.backgroundColor = colorList.bgColorForExtrasBM
                 
