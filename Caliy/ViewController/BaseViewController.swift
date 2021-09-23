@@ -13,7 +13,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-//    self.localizedStrings.soundOff,
+    //    self.localizedStrings.soundOff,
     //MARK: - Basic setup
     let childTableVC = HistoryRecordVC()
     let newTableVC = HistoryRecordVC()
@@ -29,9 +29,9 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     let frameSize = FrameSizes()
     let reviewService = ReviewService.shared
     var lineSettingsum = 0
-//    var floatingPointNumberCount = 0
-//    var isFloatingNumberCountUnder10 = true
-//    var
+    //    var floatingPointNumberCount = 0
+    //    var isFloatingNumberCountUnder10 = true
+    //    var
     
     
     var iPressed = ""
@@ -106,7 +106,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     }
     
     func nfSetup(){
-//        let nf6 = NumberFormatter() // declared at the first
+        //        let nf6 = NumberFormatter() // declared at the first
         
         nf1.roundingMode = .down
         nf1.maximumFractionDigits = 1
@@ -136,7 +136,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
             case "+", "-", "×","÷" : parenNeeded.toggle()
             case "(" : print("none")
             case ")" : plusNeeded.toggle()
-            parenNeeded.toggle()
+                parenNeeded.toggle()
             case "=" : manualClearNeeded.toggle()
             default:
                 plusNeeded.toggle()
@@ -168,7 +168,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
             manualParenthesis(trueToOpen: false)
         }
         
-//        printLineSetterElements("pasteAns!!!!!")
+        //        printLineSetterElements("pasteAns!!!!!")
         
     }
     
@@ -176,7 +176,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     
     
     func inputNumberPressedAtOnce(numString : String){
-     
+        
         countingNumber += 1
         
         if isAnsPressed{
@@ -233,7 +233,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     
     
     
-  
+    
     
     var isSoundOn = true
     var isLightModeOn = false
@@ -253,7 +253,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     var pOfNumsAndOpersCount = 1
     var strForProcess = [""]
     
-//    var lastMovePP : [[Int]] = [[0],[0],[0]] // lastMove Process Position
+    //    var lastMovePP : [[Int]] = [[0],[0],[0]] // lastMove Process Position
     var lastMoveOP : [[Int]] = [[0],[0],[0]]
     
     
@@ -300,7 +300,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     var saveResult : Double?
     var result : Double? // to be printed, one of the answer array.
     //    var isSaveResultInt : Bool?
-//    var floatingNumberDigits : Int?
+    //    var floatingNumberDigits : Int?
     var copypi = 0
     var copyni = [0]
     var copytempDigits = [[""]]
@@ -335,33 +335,33 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     
     
     @objc func numberPressed(sender : UIButton){
-//        isFloatingNumberCountUnder10 = true
-//        if tempDigits[pi][ni[pi]].count >= 12{ // 자릿수 합이 16 이상일 경우 Big Decimal 필요. 음..
-//            let tempDouble = Double(tempDigits[pi][ni[pi]])
-//            let tempDecimalCount = tempDouble!.decimalCount()
-//            if tempDecimalCount >= 10{
-//                isFloatingNumberCountUnder10 = false
-//            }
-//            print("tempDouble.count : \(tempDouble?.decimalCount())")
-//
-//        }
+        //        isFloatingNumberCountUnder10 = true
+        //        if tempDigits[pi][ni[pi]].count >= 12{ // 자릿수 합이 16 이상일 경우 Big Decimal 필요. 음..
+        //            let tempDouble = Double(tempDigits[pi][ni[pi]])
+        //            let tempDecimalCount = tempDouble!.decimalCount()
+        //            if tempDecimalCount >= 10{
+        //                isFloatingNumberCountUnder10 = false
+        //            }
+        //            print("tempDouble.count : \(tempDouble?.decimalCount())")
+        //
+        //        }
         
-//        if tempDigits[pi][ni[pi]].count >= 12{
-//            print("뭐가문제니?")
-//            let dummyStr1 = Double(tempDigits[pi][ni[pi]])
-//            let testStr1 = nf1.string(for: dummyStr1)
-//            let testStr2 = nf11.string(for: dummyStr1)
-//            print("testStr1 : \(testStr1), testStr2 : \(testStr2)")
-//            if testStr2!.count - testStr1!.count >= 9{
-//                isFloatingNumberCountUnder10 = false
-//                print("floatingNumber is too long! ")
-//            }
-//        }
+        //        if tempDigits[pi][ni[pi]].count >= 12{
+        //            print("뭐가문제니?")
+        //            let dummyStr1 = Double(tempDigits[pi][ni[pi]])
+        //            let testStr1 = nf1.string(for: dummyStr1)
+        //            let testStr2 = nf11.string(for: dummyStr1)
+        //            print("testStr1 : \(testStr1), testStr2 : \(testStr2)")
+        //            if testStr2!.count - testStr1!.count >= 9{
+        //                isFloatingNumberCountUnder10 = false
+        //                print("floatingNumber is too long! ")
+        //            }
+        //        }
         
         
-//        if isFloatingNumberCountUnder10{
-            
-            
+        //        if isFloatingNumberCountUnder10{
+        
+        
         if let input = tagToString[sender.tag]{
             iPressed += input
             if isAnsPressed
@@ -375,7 +375,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
             // 이새끼..뭐지.. ? 만약 바로 전 입력이 '(' 이면, 이니까 괜찮.
             if pOfNumsAndOpers[setteroi] == "op"{
                 setteroi += 1
-//                printLineSetterElements("wwwwwtf")
+                //                printLineSetterElements("wwwwwtf")
             }
             
             
@@ -460,7 +460,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 }
             } // end if DS[pi][ni[pi]] <= 1e14{
             else if ((DS[pi][ni[pi]] >= 1e13 || DS[pi][ni[pi]] <= -1e13) && input == "00") && (DS[pi][ni[pi]] < 1e14  && DS[pi][ni[pi]] > -1e14){
-
+                
                 tempDigits[pi][ni[pi]] += "0"
                 process += "0"
                 sendNotification()
@@ -488,7 +488,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     
                     if let safeDigits = Double(tempDigits[pi][ni[pi]]){
                         DS[pi][ni[pi]] = safeDigits
-                       
+                        
                         
                     }
                 }
@@ -518,15 +518,15 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         } // end of if let input = tagToString[sender.tag]{
         //                pOfProperEnter
         //        pOfNumsAndOpers.append("")
-//        }else{
-//            floatingExceedToast()
-//        }
+        //        }else{
+        //            floatingExceedToast()
+        //        }
     } // @IBAction func numberPressed(_ sender: UIButton){
     
     
     
     func manualNumberPressed(inputStr : String){
-       
+        
         let input = inputStr
         
         if isAnsPressed
@@ -540,7 +540,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         
         if pOfNumsAndOpers[setteroi] == "op"{
             setteroi += 1
-//            printLineSetterElements("wwwwwtf")
+            //            printLineSetterElements("wwwwwtf")
         }
         
         if (DS[pi][ni[pi]] > -1e14  && DS[pi][ni[pi]] < 1e14) && !((DS[pi][ni[pi]] > 1e13 || DS[pi][ni[pi]] < -1e13) && input == "00") {
@@ -557,7 +557,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 default : break
                 }
             }
-                
+            
             else if (input == ".") && (tempDigits[pi][ni[pi]] == "" || tempDigits[pi][ni[pi]] == "-" || tempDigits[pi][ni[pi]].contains(".")){//공백, - , . >> . : 모든 경우 수정됨.
                 switch tempDigits[pi][ni[pi]] {
                 case ""  :
@@ -570,7 +570,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 }
                 
             }
-                
+            
             else if (input != "0" && input != "00" && input != ".") && (tempDigits[pi][ni[pi]] == "0" || tempDigits[pi][ni[pi]] == "-0"){ // 0 , -0 >> 숫자 입력 : 모든 경우 수정됨.
                 tempDigits[pi][ni[pi]].removeLast()
                 tempDigits[pi][ni[pi]] += input
@@ -579,7 +579,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 process += input
                 
             }
-                // 괄호 닫고 바로 숫자 누른 경우.
+            // 괄호 닫고 바로 숫자 누른 경우.
             else if tempDigits[pi][ni[pi]].contains("parenclose") && operationStorage[pi][ni[pi]] == ""{
                 setteroi += 1
                 addSumOfUnitSizes()
@@ -609,7 +609,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 process += String(input)
                 sendNotification()
             }
-                
+            
             else { // usual case
                 tempDigits[pi][ni[pi]] += input
                 process += String(input)
@@ -640,9 +640,9 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         }
         
         addPOfNumsAndOpers()
-//        printLineSetterElements("왜죠1")
+        //        printLineSetterElements("왜죠1")
         pOfNumsAndOpers[setteroi] = "n"
-//        printLineSetterElements("왜죠2")
+        //        printLineSetterElements("왜죠2")
         
         addStrForProcess()
         showAnsAdvance()
@@ -657,7 +657,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     
     
     @objc func operationPressed(sender : UIButton){
-       
+        
         if let operInput = tagToString[sender.tag]{ // : String.
             iPressed += operInput
             
@@ -668,22 +668,22 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 isAnsPressed = false
                 DS[0][0] = saveResult!
                 
-//                let nf6 = NumberFormatter()
-//                nf6.roundingMode = .down
-//                nf6.maximumFractionDigits = 6
-//                nfSetup()
+                //                let nf6 = NumberFormatter()
+                //                nf6.roundingMode = .down
+                //                nf6.maximumFractionDigits = 6
+                //                nfSetup()
                 tempDigits[0][0] = nf6.string(for: saveResult!)!
                 
                 
                 //                       var realAns = ans
                 //                       var dummyStrWithComma = ""
                 //
-//                       let dummyAnsString = nf6.string(for: ans)
-//                       let dummyAnsDouble = Double(dummyAnsString!)
-//                       realAns = dummyAnsDouble!
-//
-//                tempDigits[0][0] = "\(String(format : "%.\(floatingNumberDigits ?? 0)f", saveResult!))"
-               
+                //                       let dummyAnsString = nf6.string(for: ans)
+                //                       let dummyAnsDouble = Double(dummyAnsString!)
+                //                       realAns = dummyAnsDouble!
+                //
+                //                tempDigits[0][0] = "\(String(format : "%.\(floatingNumberDigits ?? 0)f", saveResult!))"
+                
                 
                 if DS[0][0] < 0{
                     isNegativeSign = [[false,true]]
@@ -719,7 +719,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 addSumOfUnitSizes()
                 addStrForProcess()
             }
-                
+            
             else if isNegativePossible{ // true until number input.
                 if tempDigits[pi][niStart[pi][numOfPossibleNegative[pi]]] == ""{// input negative Sign
                     
@@ -742,11 +742,11 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                         sendNotification()
                     }
                 }
-                    
+                
                 else if tempDigits[pi][niStart[pi][numOfPossibleNegative[pi]]] == "-"{ // for negative sign
                     if operInput == "-"{}// - >> - : ignore input.
                     else if operInput != "-"{ // - >> + * /
-//                        printLineSetterElements("operation modified3")
+                        //                        printLineSetterElements("operation modified3")
                         process.removeLast()
                         isNegativeSign[pi][numOfPossibleNegative[pi]] = false
                         tempDigits[pi][niStart[pi][numOfPossibleNegative[pi]]] = ""
@@ -763,10 +763,10 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     sendNotification()// both cases are abnormal.
                 }
             }
-                
+            
             else if !isNegativePossible{ // modify Operation Input for duplicate case.
                 if tempDigits[pi][ni[pi]] == ""{
-//                    printLineSetterElements("operation modified")
+                    //                    printLineSetterElements("operation modified")
                     operInputSetup(operInput, ni[pi]-1)
                     process.removeLast()
                     process += operationStorage[pi][ni[pi]-1]
@@ -777,7 +777,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     dictionaryForLine[setteroi-1] = operInput
                     
                 }
-                    
+                
                 else{       //normal case
                     if process[process.index(before:process.endIndex)] == "."{ // 1.+ >> 1+ // 요깄당.
                         if tempDigits[pi][ni[pi]].contains("."){
@@ -789,7 +789,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                             strForProcess[setteroi].removeLast()
                         }
                     }
-//                    printLineSetterElements("operation modified2")
+                    //                    printLineSetterElements("operation modified2")
                     setteroi += 1
                     
                     
@@ -825,53 +825,53 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         let operInput = operSymbol
         //        showAnsAdvance()
         
-                if isAnsPressed{
-                    
-                    clear()
-                    process = ""
-                    isAnsPressed = false
-                    DS[0][0] = saveResult!
-                    
-//                    let nf6 = NumberFormatter()
-//                    nf6.roundingMode = .down
-//                    nf6.maximumFractionDigits = 6
-                    tempDigits[0][0] = nf6.string(for: saveResult!)!
-                    
-//                    tempDigits[0][0] = "\(String(format : "%.\(floatingNumberDigits ?? 0)f", saveResult!))"
-        
-                    if DS[0][0] < 0{
-                        isNegativeSign = [[false,true]]
-                    }
-                    addPOfNumsAndOpers()
-                    pOfNumsAndOpers[setteroi] = "n"
-                    
-                    addStrForProcess()
-        
-                    isNegativePossible = false
-        
-                    printProcess()
-                    saveResult = nil
-                    freshDI[0][0] = 1
-                    setteroi += 1
-        
-                    operInputSetup(operInput, ni[0])
-                    
-                    addSumOfUnitSizes()
-                    sumOfUnitSizes[setteroi] = tagToUnitSizeString[operInput]!
-                    
-                    addPOfNumsAndOpers()
-                    pOfNumsAndOpers[setteroi] = "oper"
-                    dictionaryForLine[setteroi] = operInput
-                    
-                    addStrForProcess()
-                    strForProcess[setteroi] = operInput
-                    process += operationStorage[0][0]
-                    indexUpdate()
-                    setteroi += 1
-                    addPOfNumsAndOpers()
-                    addSumOfUnitSizes()
-                    addStrForProcess()
-                }
+        if isAnsPressed{
+            
+            clear()
+            process = ""
+            isAnsPressed = false
+            DS[0][0] = saveResult!
+            
+            //                    let nf6 = NumberFormatter()
+            //                    nf6.roundingMode = .down
+            //                    nf6.maximumFractionDigits = 6
+            tempDigits[0][0] = nf6.string(for: saveResult!)!
+            
+            //                    tempDigits[0][0] = "\(String(format : "%.\(floatingNumberDigits ?? 0)f", saveResult!))"
+            
+            if DS[0][0] < 0{
+                isNegativeSign = [[false,true]]
+            }
+            addPOfNumsAndOpers()
+            pOfNumsAndOpers[setteroi] = "n"
+            
+            addStrForProcess()
+            
+            isNegativePossible = false
+            
+            printProcess()
+            saveResult = nil
+            freshDI[0][0] = 1
+            setteroi += 1
+            
+            operInputSetup(operInput, ni[0])
+            
+            addSumOfUnitSizes()
+            sumOfUnitSizes[setteroi] = tagToUnitSizeString[operInput]!
+            
+            addPOfNumsAndOpers()
+            pOfNumsAndOpers[setteroi] = "oper"
+            dictionaryForLine[setteroi] = operInput
+            
+            addStrForProcess()
+            strForProcess[setteroi] = operInput
+            process += operationStorage[0][0]
+            indexUpdate()
+            setteroi += 1
+            addPOfNumsAndOpers()
+            addSumOfUnitSizes()
+            addStrForProcess()
+        }
         //        else if isNegativePossible{ // true until number input.
         else if isNegativePossible{
             if tempDigits[pi][niStart[pi][numOfPossibleNegative[pi]]] == ""{// input negative Sign
@@ -896,7 +896,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     sendNotification()
                 }
             }
-                
+            
             else if tempDigits[pi][niStart[pi][numOfPossibleNegative[pi]]] == "-"{
                 if operInput == "-"{}// - >> - : ignore input.
                 else if operInput != "-"{ // - >> + * /
@@ -925,7 +925,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 strForProcess[setteroi-1] = operInput
                 dictionaryForLine[setteroi-1] = operInput
             }
-                
+            
             else{
                 if process[process.index(before:process.endIndex)] == "."{ // 1.+ >> 1+
                     if tempDigits[pi][ni[pi]].contains("."){
@@ -961,7 +961,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 addPOfNumsAndOpers()
                 addSumOfUnitSizes()
                 addStrForProcess()
-
+                
             }
         }
         printProcess()
@@ -977,7 +977,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         
         if !isAnsPressed {
             copyCurrentStates() // 지울 때는 왜 copy 를 안하지? 이게 호출되는건 100% . 근데 왜?
-
+            
             
             filterProcess()
             numParenCount = pi
@@ -1000,10 +1000,10 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                         addStrForProcess()
                         strForProcess[setteroi] = ")"
                         
-//                        printLineSetterElements("line 1047")
+                        //                        printLineSetterElements("line 1047")
                         
                         
-//                        printLineSetterElements("984")
+                        //                        printLineSetterElements("984")
                         //                        dicForProcess[setteroi] = ")"
                         
                         
@@ -1214,7 +1214,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         
         showingAnsAdvance = true
         calculateAns() // 이거 .. 하면 .. 정답 가능성이 보이면 바로 RealmData 에 추가되는거 아니냐?
-
+        
         resultTextView.textColor = isLightModeOn ? colorList.textColorForSemiResultBM : colorList.textColorForSemiResultDM
         isAnsPressed = false
         pasteStates()
@@ -1226,7 +1226,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     @objc func parenthesisPressed(sender : UIButton){
         if let input = tagToString[sender.tag]{
             iPressed += input
-          
+            
             if input == "("{
                 
                 if isAnsPressed{
@@ -1237,11 +1237,11 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     DS[0][0] = saveResult!
                     
                     freshDI[0][0] = 1
-//                    let nf6 = NumberFormatter()
-//                    nf6.roundingMode = .down
-//                    nf6.maximumFractionDigits = 6
+                    //                    let nf6 = NumberFormatter()
+                    //                    nf6.roundingMode = .down
+                    //                    nf6.maximumFractionDigits = 6
                     tempDigits[0][0] = nf6.string(for: saveResult!)!
-//                    tempDigits[0][0] = "\(String(format : "%.\(floatingNumberDigits ?? 0)f", saveResult!))"
+                    //                    tempDigits[0][0] = "\(String(format : "%.\(floatingNumberDigits ?? 0)f", saveResult!))"
                     
                     freshDI[0][0] = 1
                     if DS[0][0] < 0{
@@ -1378,7 +1378,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 indexPivotHelper[pi] = true
                 isNegativePossible = true
             }
-                
+            
             else if (pi != 0) && input == ")"{
                 if process[process.index(before:process.endIndex)] != "(" &&  process[process.index(before:process.endIndex)] != "-" && process[process.index(before:process.endIndex)] != "×" && process[process.index(before:process.endIndex)] != "+" && process[process.index(before:process.endIndex)] != "÷" {
                     
@@ -1615,7 +1615,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                         
                         break caseframe
                     } // usual case.
-                        
+                    
                     else if process.count > 1{
                         process.removeLast()
                         tempDigits[pi][ni[pi]].removeLast()
@@ -1682,7 +1682,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                         muldiOperIndex[pi].removeLast()
                         muldiOperIndex[pi][ni[pi]] = false
                     }
-                        
+                    
                     else{ // 음수의 부호를 지운 경우 .
                         isNegativePossible = true
                         tempDigits[pi][ni[pi]].removeLast()
@@ -1726,7 +1726,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     isNegativeSign.removeLast()
                     positionOfParen.removeLast()
                 }
-                    
+                
                 else if numOfPossibleNegative[pi] > 1{
                     niStart[pi].removeLast()
                     numOfPossibleNegative[pi] -= 1
@@ -1789,7 +1789,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                 break caseframe
             }
         } // end of caseframe
-            
+        
         else{
             self.showToast(message: self.localizedStrings.modified, with: 1, for: 1, defaultWidthSize: self.frameSize.showToastWidthSize[self.userDefaultSetup.getUserDeviceSizeInfo()] ?? 375, defaultHeightSize: self.frameSize.showToastHeightSize[self.userDefaultSetup.getUserDeviceSizeInfo()] ?? 667, widthRatio: 0.4, heightRatio: 0.04, fontsize: self.fontSize.showToastTextSize[self.userDefaultSetup.getUserDeviceSizeInfo()] ?? 13)
             
@@ -1813,7 +1813,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     process.remove(at: process.index(process.startIndex, offsetBy: lastEnterPosition, limitedBy: process.endIndex)!)
                 }
                 
-//                lastMovePP[eProcess].removeLast()
+                //                lastMovePP[eProcess].removeLast()
                 lastMoveOP[eProcess].removeLast()
                 numOfEnter[eProcess] -= 1
                 
@@ -1829,14 +1829,14 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         resultTextView.text = ""
         progressView.text = ""
         saveResult = nil
-//        floatingNumberDigits = nil
+        //        floatingNumberDigits = nil
         process = ""
     }
     
     func manualClear(){
         clear()
         saveResult = nil
-//        floatingNumberDigits = nil
+        //        floatingNumberDigits = nil
         process = ""
         progressView.text = process
     }
@@ -1899,7 +1899,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         sumOfUnitSizes = [0.0]
         pOfNumsAndOpers  = [""]
         
-//        lastMovePP = [[0],[0],[0]] // lastMove Process Position
+        //        lastMovePP = [[0],[0],[0]] // lastMove Process Position
         lastMoveOP = [[0],[0],[0]]
         numOfEnter = [0,0,0]
         dictionaryForLine = [Int : String]()
@@ -1945,7 +1945,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     }
                     continue processTillEmpty
                 }
-                    
+                
                 else if process[process.index(before:process.endIndex)] == "(" { // last char is "("
                     
                     process.removeLast()
@@ -1981,7 +1981,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                         isNegativeSign.removeLast()
                         positionOfParen.removeLast()
                     }
-                        
+                    
                     else if numOfPossibleNegative[pi] > 1{
                         niStart[pi].removeLast()
                         numOfPossibleNegative[pi] -= 1
@@ -2008,7 +2008,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
                     sendNotification()
                     continue processTillEmpty
                 }
-                    
+                
                 else if process[process.index(before:process.endIndex)] == "+" || process[process.index(before:process.endIndex)] == "-" || process[process.index(before:process.endIndex)] == "×" || process[process.index(before:process.endIndex)] == "÷" { // "last char is + - * /"
                     
                     process.removeLast()
@@ -2081,13 +2081,13 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
     }
     
     func floatingNumberDecider(ans : Double) { // ans : result!
-//        let nf0 = NumberFormatter()
-//        nf0.roundingMode = .down
-//        nf0.maximumFractionDigits = 0
+        //        let nf0 = NumberFormatter()
+        //        nf0.roundingMode = .down
+        //        nf0.maximumFractionDigits = 0
         
-//        let nf6 = NumberFormatter()
-//        nf6.roundingMode = .down
-//        nf6.maximumFractionDigits = 6
+        //        let nf6 = NumberFormatter()
+        //        nf6.roundingMode = .down
+        //        nf6.maximumFractionDigits = 6
         
         var realAns = ans
         var dummyStrWithComma = ""
@@ -2193,10 +2193,10 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
             }
         }
         
-//        if pOfNumsAndOpers.count != pOfNumsAndOpersCount{
-            lineSetter()
-//            pOfNumsAndOpersCount = pOfNumsAndOpers.count
-//        }
+        //        if pOfNumsAndOpers.count != pOfNumsAndOpersCount{
+        lineSetter()
+        //            pOfNumsAndOpersCount = pOfNumsAndOpers.count
+        //        }
         
         progressView.text = process
         
@@ -2211,7 +2211,7 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         print("sumOfUnitSizes : \(sumOfUnitSizes)")
         print("pOfNumsAndOpers : \(pOfNumsAndOpers)")
         print("strForProcess : \(strForProcess)")
-//        print("positionOfLastMovePP : \(lastMovePP)")
+        //        print("positionOfLastMovePP : \(lastMovePP)")
         print("positionOfLastMoveOP : \(lastMoveOP)")
         
         print("numOfEnter : \(numOfEnter)")
@@ -2220,95 +2220,95 @@ class BaseViewController: UIViewController, FromTableToBaseVC {
         
     }
     
-//    func lineSetter(){
-//        //        print("linesetter triggered!")
-//        var sumForEachProcess = 0.0
-//
-//        let eProcess = 0
-//        if setteroi >= 0{
-//
-//            if lastMoveOP[eProcess][numOfEnter[eProcess]] < setteroi{
-//                //잠시 막아둠(윗줄)
-//                oiLoop : for eODigit in lastMoveOP[eProcess][numOfEnter[eProcess]] ... setteroi{
-//
-//                    sumForEachProcess += sumOfUnitSizes[eODigit]// oi index
-//
-//                    if sumForEachProcess > 0.95 - 0.1{
-//                        let indexForpOfNumsAndOpers = pOfNumsAndOpers.lastIndex(of: "oper")! // 우선 이게 없을 수도 있는 수..
-//                        let lastOperator = (dictionaryForLine[indexForpOfNumsAndOpers]!)
-//                        var lastPositionToSave = process.lastIndexInt(of: Character(lastOperator))!
-//
-//                        small2 : for _ in 0 ... 5{
-//                            if String(process[lastPositionToSave - 1]) == "(" {
-//                                lastPositionToSave -= 2
-//                                if lastPositionToSave < 2 {break small2}
-//                            }else{break small2}
-//                        }
-//
-//                        process.insert("\n", at: process.index(process.startIndex, offsetBy: lastPositionToSave, limitedBy: process.endIndex)!)
-//
-//                        numOfEnter[eProcess] += 1
-//
-//                        if lastMoveOP[eProcess].count <= numOfEnter[eProcess]{
-//                            lastMoveOP[eProcess].append(0)
-//                        }
-//
-//                        lastMoveOP[eProcess][numOfEnter[eProcess]] =  indexForpOfNumsAndOpers + 1  //eODigit + 1
-//
-//                        sumForEachProcess = 0
-//                        break oiLoop
-//                    }
-//                }
-//            }
-//        }
-//    }
+    //    func lineSetter(){
+    //        //        print("linesetter triggered!")
+    //        var sumForEachProcess = 0.0
+    //
+    //        let eProcess = 0
+    //        if setteroi >= 0{
+    //
+    //            if lastMoveOP[eProcess][numOfEnter[eProcess]] < setteroi{
+    //                //잠시 막아둠(윗줄)
+    //                oiLoop : for eODigit in lastMoveOP[eProcess][numOfEnter[eProcess]] ... setteroi{
+    //
+    //                    sumForEachProcess += sumOfUnitSizes[eODigit]// oi index
+    //
+    //                    if sumForEachProcess > 0.95 - 0.1{
+    //                        let indexForpOfNumsAndOpers = pOfNumsAndOpers.lastIndex(of: "oper")! // 우선 이게 없을 수도 있는 수..
+    //                        let lastOperator = (dictionaryForLine[indexForpOfNumsAndOpers]!)
+    //                        var lastPositionToSave = process.lastIndexInt(of: Character(lastOperator))!
+    //
+    //                        small2 : for _ in 0 ... 5{
+    //                            if String(process[lastPositionToSave - 1]) == "(" {
+    //                                lastPositionToSave -= 2
+    //                                if lastPositionToSave < 2 {break small2}
+    //                            }else{break small2}
+    //                        }
+    //
+    //                        process.insert("\n", at: process.index(process.startIndex, offsetBy: lastPositionToSave, limitedBy: process.endIndex)!)
+    //
+    //                        numOfEnter[eProcess] += 1
+    //
+    //                        if lastMoveOP[eProcess].count <= numOfEnter[eProcess]{
+    //                            lastMoveOP[eProcess].append(0)
+    //                        }
+    //
+    //                        lastMoveOP[eProcess][numOfEnter[eProcess]] =  indexForpOfNumsAndOpers + 1  //eODigit + 1
+    //
+    //                        sumForEachProcess = 0
+    //                        break oiLoop
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
     
     func lineSetter(){
         var sumForEachProcess = 0.0
-
+        
         let eProcess = 0
         if setteroi >= 0{
-
+            
             if lastMoveOP[eProcess][numOfEnter[eProcess]] < setteroi{
                 //잠시 막아둠(윗줄)
                 oiLoop : for eODigit in lastMoveOP[eProcess][numOfEnter[eProcess]] ... setteroi{
-
+                    
                     sumForEachProcess += sumOfUnitSizes[eODigit]// oi index
-
+                    
                     if sumForEachProcess > 0.95 - 0.1{
                         if let indexForpOfNumsAndOpers = pOfNumsAndOpers.lastIndex(of: "oper"){ // index of last operator
-print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
+                            print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                             let lastOperator = (dictionaryForLine[indexForpOfNumsAndOpers]!) // what is operator ?
                             var lastPositionToSave = process.lastIndexInt(of: Character(lastOperator))! //process의 index of that operator.
-
+                            
                             small2 : for _ in 0 ... 5{
                                 if String(process[lastPositionToSave - 1]) == "(" {
                                     lastPositionToSave -= 2
                                     if lastPositionToSave < 2 {break small2}
                                 }else{break small2}
                             }
-
-
+                            
+                            
                             numOfEnter[eProcess] += 1
-
+                            
                             if lastMoveOP[eProcess].count <= numOfEnter[eProcess]{
                                 lastMoveOP[eProcess].append(0)
                             }
-
+                            
                             if lastMoveOP[eProcess][numOfEnter[eProcess]-1] == indexForpOfNumsAndOpers + 1{
                                 lastMoveOP[eProcess].removeLast()
                                 numOfEnter[eProcess] -= 1
-//                                if indexForpOfNumsAndOpers + 2 <
-
+                                //                                if indexForpOfNumsAndOpers + 2 <
+                                
                                 break oiLoop
                             }
-
+                            
                             process.insert("\n", at: process.index(process.startIndex, offsetBy: lastPositionToSave, limitedBy: process.endIndex)!) // 그 위치에 \n 삽입.
-
+                            
                             lastMoveOP[eProcess][numOfEnter[eProcess]] = indexForpOfNumsAndOpers + 1
-
+                            
                             sumForEachProcess = 0
-
+                            
                             break oiLoop
                         }else{print("indexForpOfNumsAndOpers : nil")}
                     } // if sumForEachProcess > 0.95 - 0.1{
@@ -2353,14 +2353,14 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                     }
                     
                     if lastMoveOP[eProcess][numOfEnter[eProcess]-1] == lastOperatorPosition + 1{
-//                        lastMoveOP[eProcess].removeLast()
-//                        numOfEnter[eProcess] -= 1
+                        //                        lastMoveOP[eProcess].removeLast()
+                        //                        numOfEnter[eProcess] -= 1
                         if lastOperatorPosition + 2 < setteroi{
                             lastMoveOP[eProcess][numOfEnter[eProcess]] = lastOperatorPosition + 2
                         }else{
                             break startFor
                         }
-//                        break startFor
+                        //                        break startFor
                         continue startFor
                     }
                     
@@ -2369,9 +2369,9 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                     lastMoveOP[eProcess][numOfEnter[eProcess]] = lastOperatorPosition + 1
                     sumForEachProcess = 0
                     
-//                    if lastMoveOP[eProcess][numOfEnter[eProcess]] == lastMoveOP[eProcess][numOfEnter[eProcess]-1]{
-//                        break startFor
-//                    }
+                    //                    if lastMoveOP[eProcess][numOfEnter[eProcess]] == lastMoveOP[eProcess][numOfEnter[eProcess]-1]{
+                    //                        break startFor
+                    //                    }
                     
                     continue startFor
                 }
@@ -2455,7 +2455,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                     }
                 }
             }
-                
+            
             else { // -1000 < tempNum < 1000
                 mProcess = num2
             }
@@ -2822,7 +2822,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
         //        print("dicForProcess : \(dicForProcess)")
         print("strForProcess : \(strForProcess)")
         //        print("positionOfProperEnter : \(pOfProperEnter)")
-//        print("lastMovePP : \(lastMovePP)")
+        //        print("lastMovePP : \(lastMovePP)")
         print("lastMoveOP : \(lastMoveOP)")
         print("numOfEnter : \(numOfEnter)")
         print("dictionaryForLine : \(dictionaryForLine)")
@@ -3172,7 +3172,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
     //MARK: - <#UI Section Not Included Any Function End.
     
     func setupPositionLayout(){
-       
+        
         // frameView = UIView()
         for subview in frameView.subviews{
             subview.removeFromSuperview()
@@ -3203,7 +3203,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                 button.heightAnchor.constraint(equalTo: frameView.heightAnchor, multiplier: 0.108).isActive = true
             }
         }else if !isOrientationPortrait{ // LandScape Mode
-           
+            
             //right side (calculator)
             view.addSubview(rightSideForLandscapeMode)
             rightSideForLandscapeMode.translatesAutoresizingMaskIntoConstraints = false
@@ -3659,7 +3659,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
             numberDot.addSubview(subDot)
             subDot.translatesAutoresizingMaskIntoConstraints = false
             subDot.centerXAnchor.constraint(equalTo: numberDot.centerXAnchor).isActive = true
-//            subDot.centerYAnchor.constraint(equalTo: numberDot.centerYAnchor).isActive = true
+            //            subDot.centerYAnchor.constraint(equalTo: numberDot.centerYAnchor).isActive = true
             subDot.bottomAnchor.constraint(equalTo: subsubDot.topAnchor).isActive = true
             subDot.widthAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: CGFloat(modifiedWidth[11])).isActive = true
             subDot.heightAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: CGFloat(heights[11])).isActive = true
@@ -3739,7 +3739,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
             
             if isSoundOn{
                 subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "etcSoundsOnLight"))// light and Sound On
-//                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOn"))// light and Sound On
+//                                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOn"))// light and Sound On
                 extra1.addSubview(subEx1Sound)
                 subEx1Sound.translatesAutoresizingMaskIntoConstraints = false
                 subEx1Sound.centerXAnchor.constraint(equalTo: extra1.centerXAnchor).isActive = true
@@ -3748,7 +3748,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                 subEx1Sound.heightAnchor.constraint(equalTo: extra1.heightAnchor, multiplier: CGFloat(0.288*1.3)).isActive = true
             }else{
                 subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "etcSoundsOffLight"))// light and Sound Off
-//                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOff"))// light and Sound Off
+//                                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOff"))// light and Sound Off
                 extra1.addSubview(subEx1Sound)
                 subEx1Sound.translatesAutoresizingMaskIntoConstraints = false
                 subEx1Sound.centerXAnchor.constraint(equalTo: extra1.centerXAnchor).isActive = true
@@ -3933,7 +3933,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
             numberDot.addSubview(subDot)
             subDot.translatesAutoresizingMaskIntoConstraints = false
             subDot.centerXAnchor.constraint(equalTo: numberDot.centerXAnchor).isActive = true
-//            subDot.centerYAnchor.constraint(equalTo: numberDot.centerYAnchor).isActive = true
+            //            subDot.centerYAnchor.constraint(equalTo: numberDot.centerYAnchor).isActive = true
             subDot.bottomAnchor.constraint(equalTo: subsubDot.topAnchor).isActive = true
             subDot.widthAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: CGFloat(modifiedWidth[11])).isActive = true
             subDot.heightAnchor.constraint(equalTo: numberDot.heightAnchor, multiplier: CGFloat(heights[11])).isActive = true
@@ -4015,6 +4015,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
             if isSoundOn{
                 subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "etcSoundsOnDark"))// dark and Sound On
 //                                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOn"))// dark and Sound On
+                //                                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOn"))// dark and Sound On
                 extra1.addSubview(subEx1Sound)
                 subEx1Sound.translatesAutoresizingMaskIntoConstraints = false
                 subEx1Sound.centerXAnchor.constraint(equalTo: extra1.centerXAnchor).isActive = true
@@ -4023,7 +4024,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                 subEx1Sound.heightAnchor.constraint(equalTo: extra1.heightAnchor, multiplier: CGFloat(0.288*1.3)).isActive = true
             }else{
                 subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "etcSoundsOffDark"))// dark and Sound Off
-//                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOff"))// dark and Sound Off
+                //                subEx1Sound = UIImageView(image: #imageLiteral(resourceName: "sampleSoundOff"))// dark and Sound Off
                 extra1.addSubview(subEx1Sound)
                 subEx1Sound.translatesAutoresizingMaskIntoConstraints = false
                 subEx1Sound.centerXAnchor.constraint(equalTo: extra1.centerXAnchor).isActive = true
@@ -4034,6 +4035,8 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
             
             if isNotificationOn{
                 subEx3Notification = UIImageView(image: #imageLiteral(resourceName: "etcNotificationOnDark")) // dark and Notification On
+//                                subEx3Notification = UIImageView(image: #imageLiteral(resourceName: "samplenotificationOff")) // dark and Notification On
+//                sampleNotificationOn
                 extra3.addSubview(subEx3Notification)
                 subEx3Notification.translatesAutoresizingMaskIntoConstraints = false
                 subEx3Notification.centerXAnchor.constraint(equalTo: extra3.centerXAnchor).isActive = true
@@ -4042,6 +4045,7 @@ print("indexForpOfNumsAndOpers : \(indexForpOfNumsAndOpers)")
                 subEx3Notification.heightAnchor.constraint(equalTo: extra3.heightAnchor, multiplier: CGFloat(0.288*1.3)).isActive = true
             }else{
                 subEx3Notification = UIImageView(image: #imageLiteral(resourceName: "etcNotificationOffDark")) // dark and Notification Off
+//                subEx3Notification = UIImageView(image: #imageLiteral(resourceName: "samplenotificationOff")) // dark and Notification On
                 extra3.addSubview(subEx3Notification)
                 subEx3Notification.translatesAutoresizingMaskIntoConstraints = false
                 subEx3Notification.centerXAnchor.constraint(equalTo: extra3.centerXAnchor).isActive = true
@@ -4099,11 +4103,11 @@ extension Double {
         if self == Double(Int(self)) {
             return 0
         }
-
+        
         let integerString = String(Int(self))
         let doubleString = String(Double(self))
         let decimalCount = doubleString.count - integerString.count - 1
-
+        
         return decimalCount
     }
 }
